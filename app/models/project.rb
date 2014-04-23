@@ -4,7 +4,7 @@ class Project < ActiveRecord::Base
     belongs_to :user
 
     # Validations
-    validates_presence_of :title
+    validates_presence_of :title, :user
 
     # Public
 
