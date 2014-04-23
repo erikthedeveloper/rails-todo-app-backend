@@ -22,4 +22,14 @@ class ProjectTest < ActiveSupport::TestCase
         assert_equal 2, project.tasks.count, "Project should have 2 tasks"
     end
 
+    test 'Tasks belonging to project are deleted when project is deleted' do
+        project = User.create(first_name: 'Joe', email: 'joe@joe.com').projects.create(title: 'The project')
+        tasks = project.tasks.create([
+            {title: 'The task..'},
+            {title: 'The task..'}
+            ])
+        project.destroy
+        assert !Task.find_by_id(tasks.first.id), "Tasks should have been deleted along with project"
+    end
+
 end
