@@ -4,6 +4,7 @@ class CreateTasks < ActiveRecord::Migration
       t.string :title
       t.datetime :due
       t.boolean :complete
+      t.belongs_to :project, index: true
 
       t.timestamps
     end
