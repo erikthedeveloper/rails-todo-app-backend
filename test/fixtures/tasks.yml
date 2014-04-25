@@ -1,11 +1,25 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  title: MyString
-  due: 2014-04-23 14:27:47
-  complete: false
+project_1_1:
+    project_id: 1
+    title: Project One Task One
+    due: 2014-07-23 14:27:47
+    complete: false
 
-two:
-  title: MyString
-  due: 2014-04-23 14:27:47
-  complete: false
+project_1_2:
+    project_id: 1
+    title: Project One Task Two
+    due: 2014-08-23 14:27:47
+    complete: true
+
+project_2_1:
+    project_id: 2
+    title: Project Two Task One
+    due: 2014-07-23 14:27:47
+    complete: false
+
+project_2_2:
+    project_id: 2
+    title: Project Two Task Two
+    due: 2014-08-23 14:27:47
+    complete: true
