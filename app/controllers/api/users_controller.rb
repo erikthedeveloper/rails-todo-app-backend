@@ -10,6 +10,8 @@ module API
             @user = User.new(first_name: 'Joe', email: 'joejoe@joes.com')
             if @user.save
                 render json: @user, status: :created, root: false
+            else
+                render json: @user.errors, status: :unprocessable_entity, root: false
             end
         end
 
