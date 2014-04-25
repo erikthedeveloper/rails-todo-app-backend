@@ -1,11 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  title: MyString
-  description: MyText
-  user_id: 
+joe_1:
+    id: 1
+    title: Project One
+    description: Just a Lorem ipsum dolor sit amet.
+    user_id: 1
 
-two:
-  title: MyString
-  description: MyText
-  user_id: 
+joe_2:
+    id: 2
+    title: Project Two
+    description: Just another Lorem ipsum dolor sit amet.
+    user_id: 1
