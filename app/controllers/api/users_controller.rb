@@ -6,6 +6,17 @@ module API
             render json: @users, status: :ok, root: false
         end
 
+        def show
+            @user = User.find(params[:id])
+            render json: @user
+        end
+
+        def destroy
+            if @user = User.find(params[:id])
+                render json: @user.destroy, status: :ok
+            end
+        end
+
         def create
             @user = User.new(first_name: 'Joe', email: 'joejoe@joes.com')
             if @user.save
