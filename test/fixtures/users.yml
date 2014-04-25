@@ -1,6 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 joe:
+  id: 1
   first_name: Joe
   last_name: Schmoe
   email: joe@joeschmoe.com
