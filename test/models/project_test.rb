@@ -9,17 +9,14 @@ class ProjectTest < ActiveSupport::TestCase
     end
 
     test 'Belongs to a user' do
-        user    = User.create(first_name: 'Joe', email: 'joe@joe.com')
-        project = user.projects.create(title: 'The project')
-        assert project.valid?, "Project was not created successfully..."
+        user    = users(:joe)
+        project = projects(:joe_1)
+        assert_equal project.user.first_name, user.first_name, "Project's user's first_name did not match..."
     end
 
     test 'Has many tasks' do
-        project = User.create(first_name: 'Joe', email: 'joe@joe.com').projects.create(title: 'The project')
-        project.tasks.create([
-            {title: 'Task number 1'}, {title: 'Task number 2'}
-            ])
-        assert_equal 2, project.tasks.count, "Project should have 2 tasks"
+        project = projects(:joe_1)
+        assert project.tasks, "Project should have many tasks"
     end
 
     test 'Tasks belonging to project are deleted when project is deleted' do
